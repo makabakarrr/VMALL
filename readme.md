@@ -23,8 +23,8 @@
 
 **1.项目工程文件规范：**
 
-![Image text](https://github.com/xiaofupo/VMALL/blob/master/img/img.jpg)
 ![Image text](https://github.com/xiaofupo/VMALL/blob/master/img/folder.jpg)
+![Image text](https://github.com/xiaofupo/VMALL/blob/master/img/img.jpg)
 > 图片、css文件、js文件按文件名放置，路径一致方便以后整合。由于图片过多，img文件夹内部如右图所示，按文件名存放各个页面所需的图片。
 
 **2.文件命名：**

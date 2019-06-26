@@ -38,7 +38,7 @@
 
 **3.iconfont存放格式**
 
-
+![Image text](https://github.com/xiaofupo/VMALL/blob/master/img/iconfont%E5%AD%98%E6%94%BE%E6%A0%BC%E5%BC%8F.jpg)
 
 > iconfont存放在css文件内部，在css文件内新建存放各页面用到的iconfont文件夹，如：首页用到的iconfont存放于indexIcon文件夹。reset.css为重置样式表。
 

@@ -197,7 +197,40 @@
 .phone dt:last-child{
   border-bottom: none;
 }
-
+.nav_right ul li:last-child{
+  background: #f2f2f2;
+  width: 91px;
+  height: 36px;
+  text-align: center;
+}
+.nav_right ul li:last-child::before{
+  display: none;
+}
+.nav_right .shopCart{
+  width: 460px;
+  height: 230px;
+}
+.shopCart p{
+  height: 100px;
+  margin: 65px 0;
+  text-align: center;
+  color: #a4a4a4;
+}
+.shopCart p span{
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background: #f4f4f4;
+  background-size: 100% 100%;
+  color: #a4a4a4;
+  font-size: 50px;
+  line-height: 100px;
+  border-radius: 50px;
+}
+.drop:hover a{
+  color: #ca141d;
+}
 /**底部样式表**/
 .footer {
   height: 396px;

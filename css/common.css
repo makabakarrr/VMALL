@@ -228,7 +228,7 @@
   line-height: 100px;
   border-radius: 50px;
 }
-.drop:hover a{
+.nav_right ul li:last-child:hover .lastA{
   color: #ca141d;
 }
 /**底部样式表**/

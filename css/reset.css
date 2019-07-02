@@ -1,0 +1,47 @@
+body,html,a,img,h1,h2,h3,h4,h5,h6,p,ul,li,ol,
+dl,dt,dd,form,input,table,tr,td,span,i,em,b,
+strong{
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    min-width: 1200px;
+    height: 100%;
+    font-size: 12px;
+}
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+}
+.fl{
+    float: left;
+
+}
+.fr{
+    float: right;
+}
+/*****使用em标签实现垂直居中*****/
+em{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
+}
+/****清除浮动****/
+.clear::after{
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;/**为了解决浏览器在font-size小于18默认为18**/
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 1px;
+}
+/***文字省略号**/
+.ell{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

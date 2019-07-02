@@ -1,5 +1,5 @@
 ### 文件描述
-1.顶部广告为class=‘top’的div，顶部导航栏为class=‘top_nav’的div，页面底部为class='footer'的div，头部和底部的样式表为common.css，js文件为common.js，页面其它部分的样式表为index.css。
+1.顶部广告为class=‘top’的div，顶部导航栏为class=‘top_nav’的div，页面底部为class='footer'的div，页面右侧固定导航为class=‘suspend’的div。这些部分的样式表为common.css，js文件为common.js，页面其它部分的样式表为index.css。
 
 ### 四、项目书写规范
 

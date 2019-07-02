@@ -163,6 +163,11 @@
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 20px;
   text-align: left;
+  height: 90px;
+}
+.phone dt:last-child{
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 .phone dt img{
   width: 90px;
@@ -184,7 +189,7 @@
   width: 32px;
   height: 32px;
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 10px;
   color: #797979;
   margin-right: 10px
@@ -476,4 +481,61 @@
 
 .footer .footer_con .footer_bottom .bottom_right a img {
   width: 100%;
+}
+/* 页面右侧悬浮导航 */
+.suspend{
+  position: fixed;
+  right: 6px;
+  bottom: 20px;
+  width: 38px;
+  height: 166px;
+}
+.suspend li{
+  width: 38px;
+  height: 41px;
+  line-height: 41px;
+  position: relative;
+  background: #fff;
+  text-align: center;
+}
+.suspend li:nth-child(1){
+  border-radius: 2px 2px 0 0;
+}
+.suspend li:nth-child(3){
+  border-radius: 0 0 2px 2px;
+}
+.suspend li a i{
+  font-size: 26px;
+  color: #a4a4a4;
+}
+
+.suspend li p{
+  position: absolute;
+  width: 76px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 2px;
+  color: #777;
+  background: #fff;
+  box-shadow: 0 2px 36px 0 rgba(0,0,0,0.07);
+  text-align: center;
+  right: 46px;
+  top: 0;z-index: 100;
+  display: none;
+}
+.suspend li p .triangle{
+  display: block;
+  border-left: 5px solid #fff;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  right: -5px;
+  top: 13px;
+}
+.suspend li:hover p{
+  display: block;
+  cursor: pointer;
+}
+.suspend .toTop{
+  display: none;
 }

@@ -49,5 +49,16 @@ $(function(){
                 
             }
         })
+    /* 右侧悬浮导航 返回顶部*/
+        var toTop = $('.toTop');
+        var doc = $(document);
+        doc.scroll(function(){
+            console.log(doc.scrollTop())
+            if(doc.scrollTop() >= 1000){
+                toTop.css('display','list-item');
+            }else{
+                toTop.css('display','none');
+            }
+        })
         
-    })
+})

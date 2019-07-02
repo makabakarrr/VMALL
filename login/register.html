@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        a{
+           text-decoration: none; 
+        }
+        input{
+            outline: none;
+            border: none;
+            background: #f7f7f7;
+            color: #ccc;
+        }
+        body,html{
+            height: 100%;
+            width: 100%;
+            background: #f2f2f2;
+        }
+        .head{
+            height: 60px;
+            width: 100%;
+            background: #333333;
+        }
+        .nav{
+            height: 100%;
+            width: 960px;
+            margin: 0 auto;
+        }
+        .nav span,.nav img,.nav h2{
+            float: left;
+            line-height: 60px;
+        }
+
+        .nav img{
+            margin-top:8px; 
+        }
+        .nav span{
+            color: #ccc;
+            margin: 0 10px;
+        }
+        .nav h2{
+            color: #fff;
+            font-size: 16px;
+        }
+        .tab{
+            margin: 30px auto 0;
+            height: 100%;
+            width: 960px;
+            overflow: hidden;
+        }
+        .tab li{
+            width: 146px;
+            height: 36px;
+            background: #ccc;
+            line-height: 36px;
+            text-align: center;
+            color: #fff;
+            margin-right:10px; 
+            float: left;
+        }
+        .login{
+            height: 600px;
+            width: 960px;
+            background: #fff;
+            margin: 0 auto;
+            padding: 38px 0 0 270px;
+            box-sizing: border-box;
+        }
+        .ys{
+            height: 42px;
+            width: 420px;
+            border: 1px solid #e1e1e1;
+            border-radius: 20px;
+            background: #f7f7f7;
+            margin-bottom:20px; 
+        }
+        .input-left{
+            height: 42px;
+            width: 100px;
+            border-right:1px solid #e1e1e1;
+            line-height: 42px;
+            text-align: justify;
+            text-align-last: justify;
+            padding: 0 10px;
+            float: left;
+        }
+        .input-center{
+            width: 280px;
+            height: 42px;
+            float: left;
+            text-align:center;
+            line-height: 42px;
+        }
+        .input-center span{
+            margin-right:200px; 
+        }
+        .ys input{
+            margin-right:76px 
+        }
+        .yz {
+            line-height: 42px;
+             padding-left:20px; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="register">
+        <div class="head">
+            <div class="nav">
+                <img src="img/ico.png" >
+                <span>|</span>
+                <h2>华为商城</h2>
+            </div> 
+        </div>
+        <ul class="tab">
+            <li class="tab-l">
+                <i class="iconfont icon-shouji"></i>
+                <span>手机号</span>
+            </li>
+            <li class="tab-r">
+                <i class="iconfont icon-email"></i>
+                <span>电子邮箱</span>
+            </li> 
+        </ul>
+        <div class="login">
+            <form action="" class="fr" method="post">
+                <!-- 手机注册 -->
+                <div class="phone">
+                    <div class="state ys">
+                            <div class="input-left">
+                                    国家/地区
+                            </div>
+                            <div class="input-center">
+                                <span>中国</span>
+                                <img src="img/jt.jpg" alt="">
+                            </div>
+                    </div>
+                    <div class="ys">
+                            <div class="input-left">
+                                    + 86(中国)
+                            </div>
+                            <div class="input-center">
+                               <input type="text" placeholder="请输入手机号">
+                            </div>
+                    </div>
+                    <div class="ys">   
+                            <img src="img/yz_03.png" class="yz">
+                            点击按钮进行验证  
+                    </div>
+                  
+
+
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

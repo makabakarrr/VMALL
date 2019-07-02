@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/log.css">
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+</head>
+<body>
+    
+    <div class="wrap">
+        <a class="login" href="javascript:;">请登录</a>
+        <div class="mask"></div>
+        <form action="" class="fm" method="post">
+            <P class="top"><span class="x">X</span></P>
+            <div class="nei">
+            <div class="deng">
+                <a href="#" class="zh">账号登录</a> 
+                <span class="gang" style="color:#ccc">|</span>
+                <a href="#" class="sao">扫码登录</a>
+            </div>
+            <div class="ewm">
+                <img src="img/ewm.png" >
+                <p>使用<span style="color:#1a8aff;">华为移动服务APP</span>>扫一扫若您使用华为手机，请进入“设置”>“华为帐号”扫码登录</p>
+            </div>
+            
+            <div class="icr">
+                <input type="text" class="username" placeholder="手机号/邮箱地址/华为号" >
+                <span class="xia"></span>
+                <input type="text" class="userpass" placeholder="密码">
+                <span class="xia"></span>
+                <a href="#" class="yz iconfont icon-shouji"> 短信验证码登录</a>
+                <br>
+                <input class="logon" type="submit" value="登录">
+                <br>
+                <div style="overflow: hidden;font-size:10px;">
+                    <input type="checkbox" class="auto"> 记住华为账号
+                    <a href="#" class="more">更多</a> 
+                </div>
+                <div class="zc" style="margin:10px 80px 60px ; color: #8dc5ff;">
+                    <a href="register.html" class="zhuce">注册账号</a>
+                    <span style="color:#ccc">|</span>
+                    <a href="#" class="wang">忘记密码？</a>
+                </div>
+                <div class="else">
+                    <span class="qt">其他方式登录</span>
+                    <a href="#" class=" iconfont icon-qq"> </a>
+                    <a href="#" class=" iconfont icon-zhi"> </a>
+                    <a href="#" class=" iconfont icon-weixin"> </a>
+                </div>
+                
+            </div>
+            <div class="bot"> 继续访问即代表您已同意<a href="#">华为服务协议</a>和<a href="#">华为隐私政策</a></div>
+        </form> 
+        
+
+
+
+
+        <script src="js/tool.js"></script>
+        <script>
+        
+        (function(){
+        
+            var login = document.querySelector('.login');//登录
+            var fm = document.querySelector('.fm');//input
+            var mask = document.querySelector('.mask');//背景墙
+            var close = document.querySelector(".x" );//关闭
+            var auto = document.querySelector('.auto');//记住密码
+            var username = document.querySelector('.username');//账号
+            var userpass = document.querySelector('.userpass');//密码
+            var icr = document.querySelector('.icr');//切换
+            var ewm = document.querySelector('.ewm');//二维码
+            var zh = document.querySelector('.zh');//账号登录
+            var sao = document.querySelector('.sao');//扫码登录
+
+            login.onclick = function(){//登录
+                fm.style.display = 'block';
+                mask.style.display = 'block';
+
+                if(getCookie('username')){
+                    username.value = getCookie('username');
+                    userpass.value = getCookie('userpass');
+                    auto.checked = true;
+                }
+            }
+            zh.onclick = function(){//账号登录
+                icr.style.display = 'block';
+                ewm.style.display = 'none';
+            }
+            sao.onclick = function(){//扫码登录
+                ewm.style.display = 'block';
+                icr.style.display = 'none';
+            }
+
+            close.onclick = function(){//关闭
+                mask.style.display = 'none';
+                fm.style.display = 'none';
+            }
+
+        fm.onsubmit = function () {//验证，保存账号
+            if (username.value == 'xiaocuo' && userpass.value == '123456') {
+            if (auto.checked) {
+                setCookie('username',username.value,7);
+            } else {
+                removeCookie('username');
+                removeCookie('userpass');
+            }
+        } else {
+            alert('账号或密码错误');
+            return false;
+        }
+    }
+          
+        })();
+        
+        
+        </script>
+    </div>
+</body>
+</html>

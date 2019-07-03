@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<link rel="stylesheet" type="text/css" href="shopCar.css" />
+	<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+	<style>
+		html,body,div,a,img,ul,li,input,p,span {
+			padding: 0;
+			margin: 0;
+		}
+
+		body {
+			background: #f5f5f5;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 头部 -->
+	<div id="header">
+		<div id="header_box">
+			<div id="header_left">
+				<a href="">首页</a>
+				<a href="">华为官网</a>
+				<a href="">荣耀官网</a>
+				<a href="">花粉俱乐部</a>
+				<a href="">V码(优购码)</a>
+				<a href="">企业购</a>
+				<a href="">Slecet Region</a>
+				<a id="last" href="" class="lasta">更多精彩
+					<div class="exciting">
+						<p onclick="goNext(1)">EMUI</p>
+						<p onclick="goNext(2)">应用市场</p>
+						<p onclick="goNext(3)">华为终端云空间</p>
+						<p onclick="goNext(4)">开发者联盟</p>
+					</div>
+					<i class="iconfont icon-xiabiao" id="icon"></i>
+				</a>
+			</div>
+			<div id="header_right">
+				<a href="javascript:;" id="top_login" class="iconfont">
+					<span>请登录</span>
+					<div class="top_login"><i class="exit">退出登录</i></div>
+				</a>
+				<a href="javascript:;" id="top_register">注册</a>
+				<a href="">我的订单</a>
+				<a id="ser" href="">客户服务
+					<div class="server">
+						<p>服务中心</p>
+						<p>联系客服</p>
+					</div>
+					<i class="iconfont icon-xiabiao" id="ver"></i>
+				</a>
+				<a href="" id="ele">网站导航
+					<div class="channel">
+						<p class="iconfont icon-shangchengshouyeshezhi fl"><br><span class="po">商城首页</span></p>
+
+						<dl class="fl">
+							<dt>频道</dt>
+							<dd>华为专区 <span>华为专区</span></dd>
+							<dd class="for">华为专区</dd>
+						</dl>
+						<dl class="fl">
+							<dt>产品</dt>
+							<dd>增值服务 <span>增值服务</span></dd>
+							<dd>华为专区 <span>华为专区</span></dd>
+							<dd>华为专区 <span>华为专区</span></dd>
+						</dl>
+						<dl class="fl">
+							<dt>产品</dt>
+							<dd>增值服务 <span>华为专区</span></dd>
+							<dd>华为专区 <span>增值服务</span></dd>
+
+						</dl>
+						<dl class="fl">
+							<dt>会员</dt>
+							<dd>会员频道</dd>
+						</dl>
+					</div>
+					<i class="iconfont icon-xiabiao" id="neter"></i>
+				</a>
+				<a href="" id="inpone" class="lasta">手机版
+					<i class="iconfont icon-xiabiao" id="inp"></i>
+					<div class="app">
+						<div class="content">
+							<img class="fl images" src="img/huawei1.png" />
+							<div class="fl contenter">
+								<p>华为商城app</p>
+								<p class="two">新人专享好礼</p>
+								<p class="two">最高获5000积分</p>
+								<p><i class="iconfont icon-android"></i><img src="img/link_1.jpg" /></p>
+							</div>
+						</div>
+						<div class="content">
+							<img class="fl images" src="img/huawei2.jpg" />
+							<div class="fl contenter">
+								<p>华为商城app</p>
+								<p class="two">新人专享好礼</p>
+								<p class="two">最高获5000积分</p>
+								<p><i class="iconfont icon-android"></i><img src="img/link_1.jpg" /></p>
+							</div>
+						</div>
+						<div class="content">
+							<img class="fl images" src="img/huawei3.jpg" />
+							<div class="fl contenter">
+								<p>华为商城app</p>
+								<p class="two">新人专享好礼</p>
+								<p class="two">最高获5000积分</p>
+								<p><i class="iconfont icon-android"></i><img src="img/link_1.jpg" /></p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- 头部下面的 -->
+	<div id="header_bottom_box">
+		<div id="box">
+			<div id="box_left" style="display: flex;">
+				<img src="img/logo.jpg">
+				<span id="">我的购物车</span>
+			</div>
+			<div id="box_right">
+				<img src="img/wuliu.jpg">
+			</div>
+		</div>
+	</div>
+	<div class="loading">
+		<div class="onload">
+			<P>你还没有登录！登录之前可查看之前加入的商品<button class="btn">登录</button></P>
+		</div>
+	</div>
+	<!-- 购物车头部 -->
+	<div id="shopTableHeader">
+		<div class="box">
+			<div class="left">
+				<input type="checkbox" name="" id="checkAll" value="" />
+				<span>全选</span>
+				<span style="display: inline-block;margin-left: 100px;">商品</span>
+			</div>
+			<div class="right">
+				<span>单价</span>
+				<span>数量</span>
+				<span>小计</span>
+				<span>操作</span>
+			</div>
+		</div>
+	</div>
+	<!-- 购物车内容 -->
+	<div id="shopTableCountent" class="same">
+		<!-- ////// -->
+
+		<div class="shopCarItem">
+			<div class="left">
+				<input type="checkbox" name="" id="" value="" />
+				<img src="img/shop.jpg">
+				<span class="shopone">荣耀小k2儿童手表</span>
+			</div>
+			<div class="right">
+				<p>
+					<span class="shoptwo" style="display: block;">￥299.00</span>
+					<span style="text-decoration:line-through;color: #a4a4a4;">￥299.00</span>
+				</p>
+				<p style="display: flex;">
+					<button class="button1">-</button>
+					<input type="text" class="shopthree" name="" id="" value="1" />
+					<button class="button2" style="color: #717171;">+</button>
+				</p>
+				<p class="xiaoji">
+					<span id="price">￥299.00</span>
+					<span style="color: #d9621d;">省￥70.00</span>
+				</p>
+				<p id="delete" style="color: #a4a4a4;">删除
+					 <div class="requery">
+						<span class="requerys">你确定要删除该商品吗</span>
+						<button id="yes">是</button><button id="no">否</button>
+					</div> 
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- 购物车底部 -->
+	<div id="shopTableBottom">
+		<div class="box">
+			<div class="left">
+				<input type="checkbox" name="" id="checkAlls" value="" />
+				<span style="margin-left: 10px;">全选</span>
+				<span style="display: none;margin-left: 20px;">删除</span>
+			</div>
+			<div class="right">
+				<div class="text">
+					<p style="font-size: 14px;margin-right: 10px;">总价: <span style="color: #ca151e;font-weight: 600;"
+							id="totalPrice">￥ 229.00</span><span class="wenhao">?</span></p>
+					<p style="margin-top: 10px;">已选<span style="color: #ca151e;font-weight: 600;" id="totalNumber"> 1
+						</span>件商品，优惠: <span style="color: #000;">￥70.00</span></p>
+				</div>
+				<div class="settle">
+					立即结算
+				</div>
+			</div>
+		</div>
+	</div>
+<!--商品推荐-->
+	<div class="Body4">
+			<h5 class="shopi">商品推荐</h5>
+			<div class="B4-container">
+			  <span class="prev2"><</span>
+				<span class="carrousel-floor first2">
+				  <span class="carrousel-img"><a href=""><img src="./img/1.png" alt="" class="img2"></a></span>
+				  <span class="floor-name">HVWEI nova 4 3D打印<br>壳（时空之旅）</span>
+				  <span class="floor-price">￥79.00</span>
+			  </span>
+			  <span class="carrousel-floor">
+				<span class="carrousel-img"><a href=""><img src="./img/2.png" alt="" class="img2"></a></span>
+				<span class="floor-name">HVWEI nova 4 3D打印<br>壳（乐玩青春）</span>
+				<span class="floor-price">￥79.00</span>
+			  </span>
+			  <span class="carrousel-floor">
+				<span class="carrousel-img"><a href=""><img src="./img/3.png" alt="" class="img2"></a></span>
+				<span class="floor-name">HVWEI nova 4 3D打印<br>硅胶保护壳（黑色）</span>
+				<span class="floor-price">￥99.00</span>
+			  </span>
+			  <span class="carrousel-floor">
+				<span class="carrousel-img"><a href=""><img src="./img/4.png" alt="" class="img2"></a></span>
+				<span class="floor-name">华为子母路由Q02 pro（1<br>母1子）（白色）</span>
+				<span class="floor-price">￥749.00</span>
+			  </span>
+			 
+			  <span class="carrousel-floor last2">
+				<span class="carrousel-img"><a href=""><img src="./img/5.png" alt="" class="img2"></a></span>
+				<span class="floor-name">华为AI音响（星云白）</span>
+				<span class="floor-price">￥399.00</span>
+			  </span>
+			  <span class="next2">></span>
+			</div>
+		  </div>
+	<!-- footer -->
+	<div id="footer">
+		<div class="footer_top">
+			<p>
+				<img src="img/footer_1.jpg">
+				<span>百强企业 品质保证</span>
+			</p>
+			<p>
+				<img src="img/footer_1.jpg">
+				<span>百强企业 品质保证</span>
+			</p>
+			<p>
+				<img src="img/footer_1.jpg">
+				<span>百强企业 品质保证</span>
+			</p>
+			<p>
+				<img src="img/footer_1.jpg">
+				<span>百强企业 品质保证</span>
+			</p>
+		</div>
+		<div class="footer_centre">
+			<ul class="footer_centrea">
+				<li><a>购物相关</a></li>
+				<li><a>购物指南</a></li>
+				<li><a>配送方式</a></li>
+				<li><a>支付方式</a></li>
+				<li><a>常见问题</a></li>
+
+			</ul>
+			<ul class="footer_centrea">
+				<li><a>保修与退换货</a></li>
+				<li><a>保修政策</a></li>
+				<li><a>退换货政策</a></li>
+				<li><a>退换货流程</a></li>
+				<li><a>保修状态查询</a></li>
+				<li><a>配件防伪查询</a></li>
+			</ul>
+			<ul class="footer_centrea">
+				<li><a>维修与技术支持</a></li>
+				<li><a>售后网点</a></li>
+				<li><a>预约维修</a></li>
+				<li><a>手机寄修</a></li>
+				<li><a>备件价格查询</a></li>
+				<li><a>上门服务</a></li>
+			</ul>
+			<ul class="footer_centrea">
+				<li><a>特色服务</a></li>
+				<li><a>防伪查询</a></li>
+				<li><a>补够保障</a></li>
+				<li><a>以旧换新</a></li>
+				<li><a>礼品包装</a></li>
+
+			</ul>
+			<ul class="footer_centrea">
+				<li><a>关于我们</a></li>
+				<li><a>公司介绍</a></li>
+				<li><a>华为商城简介</a></li>
+				<li><a>华为线下门店</a></li>
+				<li><a>荣耀线下门店</a></li>
+				<li><a>诚征英才</a></li>
+				<li><a>意见反馈</a></li>
+
+			</ul>
+			<ul class="footer_centrea">
+				<li><a>友情链接</a></li>
+				<li><a>华为集团</a></li>
+				<li><a>华为CBG官网</a></li>
+				<li><a>荣耀官网</a></li>
+				<li><a>花粉俱乐部</a></li>
+				<li><a>网站地图</a></li>
+			</ul>
+			<div class="footer_centre_right">
+				<div>400-088-6888</div>
+				<div>7x24小时客服热线（仅收市话费）</div>
+				<div class="hover">
+					<img src="img/link_1.jpg">
+					<span>在线客服</span>
+				</div>
+				<div>关注Vmall:
+					<img src="img/link_1.jpg">
+					<img src="img/link_1.jpg">
+					<img src="img/link_1.jpg">
+					<img src="img/link_1.jpg">
+				</div>
+			</div>
+		</div>
+		<div class="footer_bottom">
+			<img src="img/logo.png">
+			<div>
+				<p class="huawei">
+					<a href="">华为集团</a>
+					<a href="">华为CBG官网</a>
+					<a href="">荣耀官网</a>
+					<a href="">花粉俱乐部</a>
+					<a href="">华为应用市场</a>
+					<a href="">CMBI</a>
+					<a href="">华为终端云空间</a>
+					<a href="">开发之联盟</a>
+					<a href="">华为商城手机版</a>
+					<a href="">网站地图</a>
+				</p>
+				<p class="huawei">
+					<a href="">华为集团</a>
+					<a href="">华为集团</a>
+					<a href="">华为集团</a>
+					<span>© 2012-2019 华为软件技术有限公司 版权所有 保留一切权利 公安备案</span>
+					<a href="">华为集团</a>
+				</p>
+				<p class="huawei">
+					<a href="">华为集团</a>
+					<span>增值电信业务经营许可证：苏B2-20130048号| 网络文化经营许可证：</span>
+					<a href="">华为集团</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
+<script src="./js/jquery.js"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<script type="text/javascript" src="./js/animate6.1.0.js"></script>
+<script src="./js/checkAll.js"></script>
+<script src="./js/car.js"></script>
+<script src="./js/header_footer.js"></script>
+
+<script type="text/javascript" src="shopCar.js"></script>

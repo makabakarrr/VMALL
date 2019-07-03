@@ -1,0 +1,118 @@
+.ct-size{
+    width:100%;
+    overflow: hidden;
+}
+.ct-size1{
+    width:1200px;
+    margin:0 auto;
+    h2{
+        font-size:18px;
+        line-height:27px;
+        padding-left:14px;
+        border-left:4px solid #ca141d;
+        margin-bottom: 14px;
+        font-weight: normal;
+    }    
+}
+.ct-content{
+    width:1145px;
+    margin:0 auto;
+    padding:39px 50px 32px 16px;
+    border-top:1px solid #ccc;
+    overflow: hidden;
+    .ct-sizeleft{
+        float:left;
+        width:100px;
+        height:33px;
+        font-size:22px;
+        line-height:33px;
+        margin-right:20px;
+    } 
+    .ct-sizeright{
+        font-size:14px;
+        float:left;
+        
+        ul{
+            width:1011px;
+            color:#ccc;
+            float: right;
+          
+            li{
+                margin-bottom: 9px;
+                line-height:21px;
+                p{
+                    color:#3a3a3a;
+                   
+                    span{
+                        vertical-align: top;
+                        display:inline-block;
+                        width:121px;
+                        margin-right:20px;
+                    }
+                    
+                    i{
+                        display:inline-block;
+                        width:844px;
+                        font-style:normal;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+.span{
+    height:6px;
+    width:6px !important;
+    border-radius:3px;
+    background:rgb(155, 153, 153);
+    display: inline-block;
+    margin:0;
+    margin-top:10.5px;
+    margin-right:10px
+}
+.ct-size2{
+width:100%;
+background:rgb(180, 179, 179);
+.span{
+    background:rgb(180, 179, 179); 
+}   
+}
+
+    .ct-aftersale1{
+        overflow: hidden;
+        width: 1040px;
+        padding-bottom:20px;
+        padding:38px 30px 40px 130px;
+        width:100%;
+            p{
+                width:249px;
+                height:21px;
+                float:left;
+                margin:0 20px 16px 0;
+                .ct-chaoduan{
+                    width:223px !important;
+                    display:inline-block;
+                    font-style:normal;
+                    font-size:14px;
+                    line-height:21px;
+                }
+
+            }
+        
+    }
+.ct-aftersale2{
+    @extend.ct-aftersale1;
+    li{
+        display:block;
+        clear: both;
+        
+        p{
+            width:1140px;
+        }
+    }
+    p{
+    height:21px;
+    width: 100%;   
+    }
+}

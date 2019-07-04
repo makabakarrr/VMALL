@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="../css/logincss/iconfont.css">
     <style>
         *{
             margin: 0;
@@ -15,11 +15,14 @@
         a{
            text-decoration: none; 
         }
+        i{
+            font-style:normal;
+        }
         input{
             outline: none;
             border: none;
             background: #f7f7f7;
-            color: #ccc;
+            
         }
         body,html{
             height: 100%;
@@ -61,12 +64,24 @@
         .tab li{
             width: 146px;
             height: 36px;
-            background: #ccc;
             line-height: 36px;
             text-align: center;
             color: #fff;
             margin-right:10px; 
             float: left;
+            cursor: pointer;
+        }
+        .tab-l{
+            background: #b40707;
+        }
+        .tab-r{
+            background: #ccc;
+        }
+        .tab div{
+            float:right;
+        }
+        .tab div a{
+            color: #007dff;
         }
         .login{
             height: 600px;
@@ -82,7 +97,8 @@
             border: 1px solid #e1e1e1;
             border-radius: 20px;
             background: #f7f7f7;
-            margin-bottom:20px; 
+            margin-bottom:10px; 
+            position: relative;
         }
         .input-left{
             height: 42px;
@@ -106,23 +122,73 @@
         }
         .ys input{
             margin-right:76px 
+            
         }
-        .yz {
-            line-height: 42px;
-             padding-left:20px; 
+       .yz {
+             position: absolute;
+             left:20px;
+             top: 5px;
         }
-
+       .ys .ss{
+           line-height: 42px;
+           margin-left:100px; 
+       }
+       .code{
+           margin-left:-80px;
+           color: #007dff;
+       }
+       
+       .input-year{
+           line-height: 42px;
+           margin-left:20px;
+           display: inline; 
+       } 
+       .input-year select{
+           width: 80px;
+           height: 20px;
+           border: none;
+           background: #f7f7f7;
+       }
+       .submit{
+           width: 200px;
+           height: 46px;
+           background: #b40707;
+           color: #fff;
+           line-height: 46px;
+           text-align: center;
+           border-radius: 23px;
+           margin: 30px 100px 0;
+           cursor: pointer;
+       }
+       .under{
+           margin: 30px auto 0;
+           text-align: center;
+           color: #999999;
+           font-size: 10px;
+           border-top:1px solid #d7d7d7;
+           line-height: 25px; 
+           padding: 30px 0 ;
+           box-sizing: border-box;
+       }
+       .email{
+           display: none;
+       }
+       /* .phone{
+           display: none;
+       } */
     </style>
 </head>
 <body>
     <div class="register">
+
         <div class="head">
             <div class="nav">
-                <img src="img/ico.png" >
+                <img src="../img/login/ico.png" >
                 <span>|</span>
                 <h2>华为商城</h2>
             </div> 
         </div>
+
         <ul class="tab">
             <li class="tab-l">
                 <i class="iconfont icon-shouji"></i>
@@ -131,8 +197,10 @@
             <li class="tab-r">
                 <i class="iconfont icon-email"></i>
                 <span>电子邮箱</span>
-            </li> 
+            </li>
+            <div>已有华为账户<a href="login.html">登录></a></div>
         </ul>
+
         <div class="login">
             <form action="" class="fr" method="post">
                 <!-- 手机注册 -->
@@ -141,9 +209,9 @@
                             <div class="input-left">
                                     国家/地区
                             </div>
-                            <div class="input-center">
+                            <div class="input-center ">
                                 <span>中国</span>
-                                <img src="img/jt.jpg" alt="">
+                                <img src="../img/login/jt.jpg" alt="">
                             </div>
                     </div>
                     <div class="ys">
@@ -151,20 +219,263 @@
                                     + 86(中国)
                             </div>
                             <div class="input-center">
-                               <input type="text" placeholder="请输入手机号">
+                               <input type="text" id="regPhone"  placeholder="请输入手机号">
+                               <div id="err_msgPhone"></div>
                             </div>
                     </div>
+                    <br>
                     <div class="ys">   
-                            <img src="img/yz_03.png" class="yz">
-                            点击按钮进行验证  
+                            <img src="../img/login/yz_03.png" class="yz">
+                            <a href="#" class="ss">点击按钮进行验证 </a> 
                     </div>
-                  
-
-
+                    <div class="ys">
+                        <div class="input-left">
+                            短信验证码
+                        </div>
+                        <div class="input-center">
+                           <input type="text"  id="yanZM" placeholder="请输入短信验证码">
+                           <a href="#" class="code"  id="sendYzm">获取验证码</a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="ys">
+                        <div class="input-left">
+                              密码
+                        </div>
+                        <div class="input-center">
+                           <input type="password" placeholder="请输入密码" class="pass">
+                           
+                        </div>
+                        
+                    </div>
+                    <div class="ys">
+                        <div class="input-left">
+                              确认密码
+                        </div>
+                        <div class="input-center">
+                           <input type="password" class="repwd" placeholder="请再次输入密码">
+                        </div>
+                    </div>
+                    <div id="pwd_prompt"></div>
+                    <div id="repwd_prompt"></div>
+                    <br>
+                    <div class="ys">
+                        <div class="input-left">
+                              出生日期
+                        </div>
+                        <div class="input-year"  id="date">
+                            <select id="year" name="year">
+                                <option value="">选择年份</option>
+                            </select>
+                            <select id="month" name="month">
+                                <option value="">选择月份</option>
+                            </select>
+                            <select id="days" name="day class='day'">
+                                <option value="">选择日份</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 
+
+                 <!-- 邮箱注册 -->
+                 <div class="email">
+                        <div class="state ys">
+                                <div class="input-left">
+                                        国家/地区
+                                </div>
+                                <div class="input-center">
+                                    <span>中国</span>
+                                    <img src="../img/jt.jpg" alt="">
+                                </div>
+                        </div>
+                        <div class="ys">
+                                <div class="input-left">
+                                       邮箱地址
+                                </div>
+                                <div class="input-center">
+                                   <input type="text" placeholder="请输入邮箱地址">
+                                </div>
+                        </div>
+                        <br>
+                        <div class="ys">   
+                                <img src="../img/yz_03.png" class="yz">
+                                <a href="#" class="ss " >点击按钮进行验证 </a> 
+                        </div>
+                        <div class="ys">
+                            <div class="input-left">
+                                    邮件验证码
+                            </div>
+                            <div class="input-center">
+                               <input type="text" placeholder="请输入邮箱验证码">
+                               <a href="#" class="code">获取验证码</a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="ys">
+                            <div class="input-left">
+                                  密码
+                            </div>
+                            <div class="input-center">
+                               <input type="password" placeholder="请输入密码" class="pass">
+                               
+                            </div>
+                        </div>
+                        <div class="ys">
+                            <div class="input-left">
+                                  确认密码
+                            </div>
+                            <div class="input-center">
+                               <input type="password" placeholder="请再次输入密码">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="ys">
+                            <div class="input-left">
+                                  出生日期
+                            </div>
+                            <div class="input-year">
+                                <select id="year" name="year">
+                                    <option value="0">年</option>
+                                </select>
+                                <select id="month" name="month">
+                                    <option value="0">月</option>
+                                </select>
+                                <select id="day" name="day">
+                                    <option value="0">日</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit">注册</div>
             </form>
         </div>
+
+        <div class="under">
+                <span>
+                    <a href="#">
+                            华为帐号用户协议 | 关于华为帐号与隐私的声明 | 常见问题
+                    </a> 
+                    <p>
+                        Copyright © 2011-2019  华为软件技术有限公司  版权所有  保留一切权利  苏B2-20070200号 | 苏ICP备09062682号-9
+
+                    </p> 
+            </span>
+        </div>
     </div>
+
+
+
+    <script src="../js/login/jquery-1.8.3/jquery-1.8.3.min.js"></script>
+    <script src="../js/login/ajax.js"></script>
+    <script src="../js/login/select.js"></script>
+    <script>
+
+        jQuery(function ($) {
+            $(document).ready(function() {
+                $('.tab-l').click(function (){
+                    $('.email').css('display','none');
+                    $('.phone').css('display','block');
+                    $('.tab-l').css('background','#b40707');
+                    $('.tab-r').css('background','#ccc');
+            
+                    $('.phone').children().remove();
+                    $('.phone').load('register.html .phone');//用法参考jQuery的load函数
+                });
+            });
+            
+            $('.tab-r').click(function (){
+                $('.email').css('display','block');
+                $('.phone').css('display','none');
+                $('.tab-r').css('background','#b40707');
+                $('.tab-l').css('background','#ccc');
+            })
+        
+                    // 注册时，手机号 按正则格式输入 , 且检查已存在否
+        $("#regPhone").focus(function(){
+            $("#err_msgPhone").html("")
+        })
+
+        $("#regPhone").blur(function(){
+            var reg1=/^1[3|4|5|7|8][0-9]\d{8}$/;
+            if(!reg1.test(this.value)){  //如果当前用户输入的值 非真（不符合手机号规则）
+                $("#err_msgPhone").html("*请输入正确的手机号*");
+
+                return false;
+            }
+            return true;
+        })
+        
+        $(".pass").focus(function(){
+            $("#pwd_prompt").html("");
+        })
+        $(".pass").blur(function(){
+              var reg2 = /^[a-zA-Z0-9]{6,18}$/;
+              if(!reg2.test(this.value)){
+                $("#pwd_prompt").html("密码不能含有非法字符，长度在6-18之间");
+                  return false;
+              }
+                return true;
+            });
+
+        $(".repwd").focus(function(){
+            $("#repwd_prompt").html("");
+        })
+        $(".repwd").blur(function(){
+              if( $(".pass").val()!= $(".repwd").val()){
+                $("#repwd_prompt").html("两次密码不一致");
+                return false;
+              }
+                return true;
+            });
+
+
+        $('.submit').click(function(){
+            var user = $('#regPhone').val();
+            var pass = $('.pass').val();
+            $.ajax({
+                type: 'get',
+                url: '../date/login.php', 
+                // data: 'act=add&user='+user+'&pass'+pass,
+                data:{user:user,pass:pass,act:'add'},
+               dataType:'json',
+               success:function(json){
+                   if(json.msg== '注册成功'){
+                    alert(json.msg);
+                    $(location).attr("href","login.html");
+                   }else{
+                    alert(json.msg);
+                    return;
+                   }
+                    
+               },
+               error:function(err){
+                   alert(err);
+               }
+            })
+        })
+    });
+
+
+
+
+      // 年月日
+    
+      $(function(){
+			$("#date").selectDate()
+			
+			$("#days").focusout(function(){
+				var year = $("#year option:selected").html()
+				var month = $("#month option:selected").html()
+				var day = $("#days option:selected").html()
+				console.log(year+month+day)
+			})
+			
+		})
+
+
+
+
+    </script>
 </body>
 </html>

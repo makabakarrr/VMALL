@@ -70,11 +70,11 @@
   z-index: 10;
   position: relative;
 }
-.more{
+.j_more{
   position: relative;
   padding-right: 10px;
 }
-.more::before{
+.j_more::before{
   font-family: "iconfont";
   content: '\e767';
   position: absolute;
@@ -83,10 +83,10 @@
   font-size: 14px;
   color: #c9c9c9;
 }
-.drop:hover .more{
+.drop:hover .j_more{
   color: #ca151d;
 }
-.drop:hover .more::before{
+.drop:hover .j_more::before{
   content: '\e769';
   color: #ca151d;
 }
@@ -202,26 +202,25 @@
 .phone dt:last-child{
   border-bottom: none;
 }
-.nav_right ul li:last-child{
+.nav_right ul .shopCar{
   background: #f2f2f2;
   width: 91px;
   height: 36px;
   text-align: center;
 }
-.nav_right ul li:last-child::before{
+.nav_right ul .shopCar::before{
   display: none;
 }
 .nav_right .shopCart{
-  width: 460px;
-  height: 230px;
+  width: 470px;
 }
-.shopCart p{
+.shopCart .empty{
   height: 100px;
   margin: 65px 0;
   text-align: center;
   color: #a4a4a4;
 }
-.shopCart p span{
+.shopCart .empty span{
   display: block;
   width: 100px;
   height: 100px;
@@ -235,6 +234,108 @@
 }
 .nav_right ul li:last-child:hover .lastA{
   color: #ca141d;
+}
+
+/* 购物车内有商品 */
+.shopCart .com_list li{
+  float: none;
+  padding: 20px 20px 0 12px;
+  border-bottom: 1px solid #eee;
+}
+.shopCart .com_list li::before{
+  display: none;
+}
+.shopCart .com_list{
+  max-height: 458px;
+  overflow-y: auto;
+  display: none;
+}
+.shopCart .com_list li i{
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 23px 16px 0 12px;
+  float: left;
+  line-height: 20px;
+}
+.shopCart .com_list li img{
+  width: 64px;
+  height: 64px;
+  float: left;
+}
+.shopCart .com_list h4{
+  width: 294px;
+  float: left;
+  padding-left: 9px;
+  font-weight: normal;
+}
+.com_list li i{
+  color: #ca141d;
+}
+.shopCart .com_list h4 a{
+  display: block;
+  font-size: 14px;
+  line-height: 22px;
+  color: #3a3a3a;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.shopCart .com_list h4 a:hover{
+  color: #ca141d;
+}
+.shopCart .com_list p{
+  float: left;
+  width: 298px;
+  text-align: right;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: 20px;
+  font-size: 14px;
+}
+.shopCart .com_list p .price{
+  margin: 0 20px;
+}
+.shopCart .count{
+  height: 60px;
+  background: #f9f9f9;
+  padding-top: 10px;
+  padding-left: 23px;
+  box-sizing: border-box;
+  text-align: left;
+  position: relative;
+  display: none;
+}
+.count p{
+  color: #888;
+  font-size: 12px;
+  line-height: 14px;
+}
+.count h2{
+  color: #ca141d;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 40px;
+}
+.shopCart .count .account{
+  display: block;
+  float: right;
+  color: #fff;
+  background-color: #ca151e;
+  font-size: 16px;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 2px;
+  margin: 10px 20px 0 0; 
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+.shopCart .count .account:hover{
+  background: #d5444b;
 }
 /**底部样式表**/
 .footer {
@@ -293,13 +394,15 @@
   background-position: -194px 0;
 }
 
-.footer .footer_con .foot_top h3:nth-child(4) {
+.footer .footer_con .foot_top h3:nth-child(4){
   margin-right: 0;
+ 
+}
+.footer .footer_con .foot_top h3:nth-child(4) span{
   background-position: -114px 0;
 }
-
 .footer .footer_con .footer_center {
-  overflow: hidden;
+  
   padding: 23px 0 24px;
   border-bottom: 1px solid #eee;
 }
@@ -416,6 +519,37 @@
 .footer .footer_con .footer_center .foot_right p i:hover {
   color: #777;
 }
+.footer .footer_con .footer_center .foot_right p i.icon-weixin1{
+  position: relative;
+}
+.footer .footer_con .footer_center .foot_right p i.icon-weixin1 span{
+  display: none;
+  background: #fff;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 1px 5px rgba(158,158,158,0.6);
+  position: absolute;
+  top: 30px;
+  left: -50px;
+  z-index: 10px;
+}
+.footer .footer_con .footer_center .foot_right p i.icon-weixin1 span img{
+  width: 108px;
+  height: 108px;
+  margin: 6px;
+}
+.footer .footer_con .footer_center .foot_right p i.icon-weixin1 span::before{
+  content: '';
+  border-bottom: 5px solid #fff;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  position: absolute;
+  top: -5px;
+  left: 57px;
+}
+.footer .footer_con .footer_center .foot_right p i.icon-weixin1:hover span{
+  display: block;
+}
 
 .footer .footer_con .footer_bottom {
   padding: 22px 0 22px;
@@ -500,6 +634,20 @@
 }
 .suspend li:nth-child(1){
   border-radius: 2px 2px 0 0;
+  position: relative;
+}
+.suspend .shopping .num{
+  position: absolute;
+  display: none;
+  min-width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 18px;
+  border-radius: 50%;
+  background: #ca141d;
+  color: #fff;
+  top: 2px;
+  right: -2px;
 }
 .suspend li:nth-child(3){
   border-radius: 0 0 2px 2px;

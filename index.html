@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="icon" href="favicon.ico" type="image/icon" /> -->
-    <link rel="stylesheet" href="css/indexIcon/iconfont.css">
+    <link rel="icon" href="favicon.ico" type="image/icon" />
+    <link rel="stylesheet" href="css/indexIcon/icon.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/log.css">
+    <link rel="stylesheet" href="css/loginIcon/iconfont.css">
     <title>华为商城（VMALL.COM）_华为手机、荣耀手机、官网正品保障</title>
+    
 </head>
 <body>
     <!-- 顶部广告 -->
@@ -35,7 +38,7 @@
                     <li><a href="##">Select Region</a></li>
                     <li class="drop">
                         <div class="drop_con">
-                            <a href="##" class="more">更多精彩</a>
+                            <a href="##" class="j_more">更多精彩</a>
                             <dl class="dropDown">
                                 <dt><a href="#">EMUI</a></dt>
                                 <dt><a href="#">应用市场</a></dt>
@@ -49,13 +52,13 @@
             <div class="nav_right fr">
                 <ul>
                     <li>
-                        <a href="##">请登录</a>
+                        <a href="##" class="j_login">请登录</a>
                         <a href="login.html">注册</a>
                     </li>
                     <li><a href="##">我的订单</a></li>
                     <li class="drop">
                         <div class="drop_con">
-                            <a href="##" class="more">客户服务</a>
+                            <a href="##" class="j_more">客户服务</a>
                             <dl class="dropDown service">
                                 <dt><a href="#">服务中心</a></dt>
                                 <dt><a href="#">联系客服</a></dt>
@@ -64,7 +67,7 @@
                     </li>
                     <li class="drop">
                         <div class="drop_con">
-                            <a href="##" class="more">网站导航</a>
+                            <a href="##" class="j_more">网站导航</a>
                             <div class="dropDown webMap">
                                 <a href="index.html" class="shouye fl"><i class="iconfont icon-shouye1"></i>商城首页</a>
                                 <div class="channel fl drop_list">
@@ -93,7 +96,7 @@
                     </li>
                     <li class="drop">
                         <div class="drop_con">
-                            <a href="##" class="more">手机版</a>
+                            <a href="##" class="j_more">手机版</a>
                             <dl class="dropDown phone">
                                 <dt class="clear">
                                     <img src="img/index/code1.png" alt="华为商城APP">
@@ -117,12 +120,25 @@
                             </dl>
                         </div>
                     </li>
-                    <li class="drop">
+                    <li class="drop shopCar">
                         <div class="drop_con">
-                            <a href="shoppingCart.html" class="lastA">购物车(<span id="num">0</span>)</a>
+                            <a href="shoppingCart.html" class="lastA">购物车(<span class="num">0</span>)</a>
                             <div class="dropDown shopCart">
-                                <p><span class="iconfont icon-tubiao_gouwuche"></span>
+                                <p class="empty"><span class="iconfont icon-tubiao_gouwuche"></span>
                                 您的购物车是空的，赶紧选购吧~</p>
+                                <ul class="com_list">
+                                    <li class="clear">
+                                        <i class="iconfont icon-xuanze"></i>
+                                        <a href="details.html"><img src="" alt=""></a>
+                                        <h4><a href="details.html"></a></h4>
+                                        <p> <span class="price"></span> x <span class="number"></span></p>
+                                    </li>
+                                </ul>
+                                <div class="count">
+                                    <p>总价：</p>
+                                    <h2 id="count">￥10000</h2>
+                                    <a href="##" class="account">结算</a>
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -132,7 +148,7 @@
     </div>
     <!-- 头部导航 LOGO区 -->
     <div class="header">
-        <div class="header_nav">
+        <div class="header_nav clear">
             <a href="#" class="logo"><img src="img/index/logo.png" alt="logo"></a>
             <ul>
                 <li><a href="##"><img src="img/index/huaweizhuanqu.png" alt="华为专区"></a></li>
@@ -142,15 +158,32 @@
                 <li><a href="##">Mate20系列</a></li>
                 <li><a href="##">荣耀V20</a></li>
             </ul>
-            <form action="" class="fr">
-                <input type="text" name="search" id="txt"><input type="submit" value="" id="btn">
-                <i class="iconfont icon-search"></i>
+            <form action="details.html" class="fr j_form">
+                <input type="text" name="search" id="txt" autocomplete="off"><input type="submit" id="btn" value="">
+                
                 <div class="tips">
                     <span><a href="details.html">nova 5 pro</a></span>
                     <span><a href="details.html">荣耀20</a></span>
                 </div>
                 
             </form>
+            <div class="search_info">
+                <div class="search_history">
+                    <p>历史记录<span>清除</span></p>
+                    <ul>
+                        <li><a href="details.html"></a></li>
+                    </ul>
+                </div>
+                <div class="search_hot">
+                    <p>热门搜索</p>
+                    <ul>
+                        <li><a href="https://www.baidu.com/">华为 20i</a></li>
+                        <li><a href="shopCar.html">HUAWEI P30</a></li>
+                        <li><a href="shopCar.html">nova 5</a></li>
+                        <li><a href="shopCar.html">nova 5i</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <!-- banner区 -->
@@ -181,44 +214,63 @@
                     <li id="left"></li>
                     <li id="right"></li>
                 </ul>
-                <ul class="classify">
-                    <li>
-                        <div class="classify_con">
-                            <h5><a href="##">手机</a></h5>
-                            <p><a href="##">荣耀</a><a href="##">HUAWEI P系列</a></p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="classify_con">
-                            <h5><a href="##">笔记本&amp;平板</a></h5>
-                            <p><a href="##">平板电脑</a><a href="##">笔记本电脑</a></p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="classify_con">
-                            <h5><a href="##">智能穿戴</a></h5>
-                            <p><a href="##">手环</a><a href="##">手表</a><a href="##">VR</a></p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="classify_con">
-                            <h5><a href="##">智能家居</a></h5>
-                            <p><a href="##">路由器</a><a href="##">电视盒子</a><a href="##">照明</a></p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="classify_con">
-                            <h5><a href="##">热销配件</a></h5>
-                            <p><a href="##">保护壳</a><a href="##">移动电源</a><a href="##">耳机</a></p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="classify_con">
-                            <h5><a href="##">增值服务&amp;其它</a></h5>
-                            <p><a href="##">AI计算平台</a><a href="##">增值卡</a></p>
-                        </div>
-                    </li>
-                </ul>
+                <div class="j_class">
+                    <ul class="classify">
+                        <li class="j_li">
+                            <div class="j_liCon">
+                                <div class="classify_con">
+                                    <h5><a href="##">手机</a></h5>
+                                    <p><a href="##">荣耀</a><a href="##">HUAWEI P系列</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="j_li">
+                            <div class="j_liCon">
+                                <div class="classify_con">
+                                    <h5><a href="##">笔记本&amp;平板</a></h5>
+                                    <p><a href="##">平板电脑</a><a href="##">笔记本电脑</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="j_li">
+                            <div class="j_liCon">
+                                <div class="classify_con">
+                                    <h5><a href="##">智能穿戴</a></h5>
+                                    <p><a href="##">手环</a><a href="##">手表</a><a href="##">VR</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="j_li">
+                            <div class="j_liCon">
+                                <div class="classify_con">
+                                    <h5><a href="##">智能家居</a></h5>
+                                    <p><a href="##">路由器</a><a href="##">电视盒子</a><a href="##">照明</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="j_li">
+                            <div class="j_liCon">
+                                <div class="classify_con">
+                                    <h5><a href="##">热销配件</a></h5>
+                                    <p><a href="##">保护壳</a><a href="##">移动电源</a><a href="##">耳机</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="j_li">
+                            <div class="j_liCon">
+                                <div class="classify_con">
+                                    <h5><a href="##">增值服务&amp;其它</a></h5>
+                                    <p><a href="##">AI计算平台</a><a href="##">增值卡</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                    <div class="classify_content">
+                        
+                    </div>
+                </div>
+                
             </div>
         </div>
         <div class="banner_bg"></div>
@@ -229,7 +281,7 @@
         <div class="info clear">
             <div class="left fl">
                 <a href="##" class="avater fl"><img src="img/index/default.png" alt="默认头像"></a>
-                <h4 class="fl">您好！请 <a href="##">登录</a> / <a href="login.html">注册</a></h4>
+                <h4 class="fl">您好！请 <a href="##" class="j_login">登录</a> / <a href="login.html">注册</a></h4>
                 <p class="fl"><a href="##">新人福利</a><a href="##">会员频道</a></p>
             </div>
             <div class="center fl">
@@ -436,7 +488,7 @@
             </h2>
             <ol class="clear">
                 <li>
-                    <a href="details.html">
+                    <a href="##">
                         <img src="img/index/phone15.png" alt="手机">
                     </a>
                 </li>
@@ -453,7 +505,7 @@
                         <img src="img/index/phone2.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥2799</p>
                     </a>
                 </li>
                 <li>
@@ -461,7 +513,7 @@
                         <img src="img/index/phone3.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥799</p>
                     </a>
                 </li>
                 <li>
@@ -469,7 +521,7 @@
                         <img src="img/index/phone4.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥4499</p>
                     </a>
                 </li>
                 <li>
@@ -477,7 +529,7 @@
                         <img src="img/index/phone5.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥3199</p>
                     </a>
                 </li>
                 <li>
@@ -485,7 +537,7 @@
                         <img src="img/index/phone6.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥1999</p>
                     </a>
                 </li>
                 <li>
@@ -493,7 +545,7 @@
                         <img src="img/index/phone7.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥1399</p>
                     </a>
                 </li>
                 <li>
@@ -501,7 +553,7 @@
                         <img src="img/index/phone8.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥799</p>
                     </a>
                 </li>
                 <li>
@@ -509,7 +561,7 @@
                         <img src="img/index/phone9.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥1499</p>
                     </a>
                 </li>
                 <li>
@@ -517,7 +569,7 @@
                         <img src="img/index/phone10.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥1899</p>
                     </a>
                 </li>
                 <li>
@@ -525,7 +577,7 @@
                         <img src="img/index/phone11.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥799</p>
                     </a>
                 </li>
                 <li>
@@ -533,7 +585,7 @@
                         <img src="img/index/phone12.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥599</p>
                     </a>
                 </li>
                 <li>
@@ -541,7 +593,7 @@
                         <img src="img/index/phone13.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥1899</p>
                     </a>
                 </li>
                 <li>
@@ -549,7 +601,7 @@
                         <img src="img/index/phone14.png" alt="手机">
                         <h4>荣耀 10</h4>
                         <h5>64GB版优惠500元</h5>
-                        <p>￥1799</p>
+                        <p>￥2499</p>
                     </a>
                 </li>
             </ol>
@@ -1479,6 +1531,276 @@
             </div>
         </div>
 
+        <!-- 生态精品 -->
+        <div class="common content_quality  similarity">
+            <a href="##" class="lookMore">查看更多>></a>
+            <h2>
+                生态精品
+                <a href="##">路由器</a><a href="##">子母/分式路由</a><a href="##">电力猫/WIFI放大器</a>
+                <a href="##">随行wifi</a><a href="##">电视盒子</a><a href="##">照明</a>
+                <a href="##">清洁</a><a href="##">节能</a><a href="##">环境</a><a href="##">安防</a>
+                <a href="##">健康</a><a href="##">厨电</a><a href="##">影音</a><a href="##">卫浴</a>
+            </h2>
+            <ol class="clear con">
+                <li class="first_li">
+                    <a href="details.html">
+                        <img src="img/index/parts1.jpg" alt="智能家居系列">
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts2.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts3.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts4.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts5.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts6.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts7.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts8.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts9.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+            </ol>
+            <div class="recommendation">
+                <ol class="clear house">
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts10.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts11.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts12.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts13.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts14.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts15.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts16.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts17.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts18.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts19.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts20.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts21.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts22.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts23.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts24.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts25.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts26.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts27.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+            <div class="arr">
+                <span class="left"></span>
+                <span class="right"></span>
+            </div>
+        </div>
         <!-- 广告栏 -->
         <div class="ad_life">
             <ul class="image">
@@ -1486,6 +1808,277 @@
                     <a href="##"><img src="img/index/ad2.jpg" alt=""></a>
                 </li>
             </ul>
+        </div>
+
+        <!-- 精品配件 -->
+        <div class="common content_acess  similarity">
+            <a href="##" class="lookMore">查看更多>></a>
+            <h2>
+                精选配件
+                <a href="##">保护壳</a><a href="##">保护套</a><a href="##">贴膜</a>
+                <a href="##">移动电源i</a><a href="##">耳机</a><a href="##">充电器/线材</a>
+                <a href="##">自拍杆/支架</a><a href="##">音箱</a><a href="##">U盘/存储卡</a><a href="##">摄像机/镜头</a>
+                <a href="##">智能硬件</a><a href="##">表带</a>
+            </h2>
+            <ol class="clear con">
+                <li class="first_li">
+                    <a href="details.html">
+                        <img src="img/index/parts1.jpg" alt="智能家居系列">
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts2.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts3.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts4.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts5.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts6.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts7.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts8.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="details.html">
+                        <img src="img/index/parts9.png" alt="智能家居系列">
+                        <h4>荣耀 10</h4>
+                        <h5>64GB版优惠500元</h5>
+                        <p>￥1799</p>
+                    </a>
+                </li>
+            </ol>
+            <div class="recommendation">
+                <ol class="clear house">
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts10.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts11.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts12.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts13.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts14.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts15.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts16.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts17.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts18.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts19.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts20.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts21.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts22.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts23.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts24.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts25.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts26.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details.html">
+                            <dl>
+                                <dt><img src="img/index/parts27.png" alt"智能家居系列品推荐"><span>新品上市</span></dt>
+                                <dd>新品上市 订金100抵200</dd>
+                            </dl>
+                            <h4>华为平板 M6 10.8英寸</h4>
+                            <p>￥2299</p>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+            <div class="arr">
+                <span class="left"></span>
+                <span class="right"></span>
+            </div>
         </div>
         <!-- 新人见面礼 -->
         <div class="ad_newCouple">
@@ -1504,7 +2097,7 @@
                 <h3><span></span>45元起免运费</h3>
                 <h3><span></span>1000家维修网点 全国联保</h3>
             </div>
-            <div class="footer_center">
+            <div class="footer_center clear">
                 <div class="foot_left">
                     <ul>
                         <li>购物相关</li>
@@ -1548,7 +2141,7 @@
                     <ul>
                         <li>友情链接
                             <span class="iconfont icon-arrowLeft liLeft"></span>
-                            <span class="iconfont icon-arrowRight liRight"></span>
+                            <span class="iconfont icon-youjiantou liRight"></span>
                         </li>
                         <li class="clear turn">
                             <ol>
@@ -1620,7 +2213,7 @@
                         <dl>7x24小时客服热线（仅收市话费）</dl>
                     </dl>
                     <a href="##" class="service_online"><i class='iconfont icon-wodekefu'></i>在线客服</a>
-                    <p>关注Vmall：<i class="iconfont icon-weixin1"></i><i class="iconfont icon-news"></i>
+                    <p>关注Vmall：<i class="iconfont icon-weixin1"><span><img src="img/index/code2.jpg" alt=""></span></i><i class="iconfont icon-news"></i>
                         <i class="iconfont icon-weibo"></i><i class="iconfont icon-huawei"></i>
                     </p>
                 </div>
@@ -1657,8 +2250,9 @@
     <!-- 页面右侧悬浮导航 -->
     <div class="suspend">
         <ul>
-            <li>
-                <a href="shoppCart.html"><i class="iconfont icon-gouwuche"></i></a>
+            <li class="shopping">
+                <span class="num">5</span>
+                <a href="shoppingCart/shopCar.html"><i class="iconfont icon-gouwuche"></i></a>
                 <p>购物车<span class="triangle"></span></p>
             </li>
             <li>
@@ -1675,8 +2269,182 @@
             </li>
         </ul>
     </div>
+
+    <!-- 庄重：登录 -->
+    
+    <div class="wrap">
+            
+            <div class="mask"></div>
+            <div action="#" class="fm"  method="post" >
+                <div class="top"><span class="x">X</span></div>
+                <div class="nei">
+                <div class="deng">
+                    <a href="#" class="zh">账号登录</a> 
+                    <span class="gang" style="color:#ccc">|</span>
+                    <a href="#" class="sao">扫码登录</a>
+                </div>
+                <div class="ewm">
+                    <img src="img/login/ewm.png" >
+                    <p>使用<span style="color:#1a8aff;">华为移动服务APP</span>>扫一扫若您使用华为手机，请进入“设置”>“华为帐号”扫码登录</p>
+                </div>
+                
+                <div class="icr">
+                    <input type="text" class="username" placeholder="手机号/邮箱地址/华为号" >
+                    <span class="xia"></span>
+                    <input type="password" class="userpass" placeholder="密码">
+                    <span class="xia"></span>
+                    <a href="#" class="yz iconfont icon-shouji"> 短信验证码登录</a>
+                    <br>
+                    <!-- <input class="login" type="submit" value="登录"> -->
+                    <button class="login">登录</button>
+                    <br>
+                    <div style="overflow: hidden;font-size:10px;">
+                        <input type="checkbox" class="auto"> 记住华为账号
+                        <a href="#" class="more">更多</a> 
+                        <div class="duo">
+                            <a href="#">遇到问题</a><br>
+                            <a href="#">更换手机号</a><br>
+                            <a href="#">安全中心</a>
+                        </div>
+                    </div>
+    
+                    <div class="zc" style="margin:10px 80px 60px ; color: #8dc5ff;">
+                        <a href="register.html" class="zhuce">注册账号</a>
+                        <span style="color:#ccc">|</span>
+                        <a href="#" class="wang">忘记密码？</a>
+                    </div>
+                    <div class="else">
+                        <span class="qt">其他方式登录</span>
+                        <a href="#" class=" iconfont icon-qq"> </a>
+                        <a href="#" class=" iconfont icon-zhi"> </a>
+                        <a href="#" class=" iconfont icon-weixin"> </a>
+                    </div>
+                    
+                </div>
+                <div class="bot"> 继续访问即代表您已同意<a href="#">华为服务协议</a>和<a href="#">华为隐私政策</a></div>
+            </form> 
+            
+            <script src="js/login/tool.js"></script>
+            <script src="js/login/ajax.js"></script>
+            <script>
+                var denglu = document.querySelectorAll('.j_login');//登录
+                var fm = document.querySelector('.fm');//input
+                var mask = document.querySelector('.mask');//背景墙
+                var close = document.querySelector(".x" );//关闭
+                var top = document.querySelector(".top" );//拖拽头部
+                var auto = document.querySelector('.auto');//记住密码
+                var user = document.querySelector('.username');//账号
+                var pass = document.querySelector('.userpass');//密码
+                var icr = document.querySelector('.icr');//切换
+                var ewm = document.querySelector('.ewm');//二维码
+                var zh = document.querySelector('.zh');//账号登录
+                var sao = document.querySelector('.sao');//扫码登录
+                var login = document.querySelector('.login');//登录账户
+                var more = document.querySelector('.more');//更多按钮
+                var duo = document.querySelector('.duo');//更多东西
+    
+    
+    
+                // 拖拽效果
+                    //onmousedown 按在哪 div
+            top.onmousedown = function(eve){
+                var e = eve || event
+                var x = e.offsetX;
+                var y = e.offsetY;
+                //onmousemove 在document上move
+                document.onmousemove = function(eve){
+                    
+                    var e = eve || event;
+                    var l = e.clientX - x;
+                    var t = e.clientY - y;
+                    
+                    var maxL = document.documentElement.clientWidth-400 ;
+                    var maxT = document.documentElement.clientHeight-500 ;
+                    
+                    l = l < 0 ? 0 : (l > maxL ? maxL : l);
+                    t = t < 0 ? 0 : (t > maxT ? maxT : t);
+                    fm.style.left = l + "px";
+                    fm.style.top = t + "px";
+                    
+                }
+                document.onmouseup = function(){
+                    //alert(1);
+                    document.onmousemove = null;
+                }
+                
+            }
+    
+            for(var i=0,len=denglu.length;i<len;i++){
+                denglu[i].onclick = function(){//登录
+                    fm.style.display = 'block';
+                    mask.style.display = 'block';
+    
+                    if(getCookie('user')){
+                        user.value = getCookie('user');
+                        pass.value = getCookie('pass');
+                        auto.checked = true;
+                    }
+            }
+            zh.onclick = function(){//账号登录
+                        icr.style.display = 'block';
+                        ewm.style.display = 'none';
+                    }
+                    sao.onclick = function(){//扫码登录
+                        ewm.style.display = 'block';
+                        icr.style.display = 'none';
+                    }
+        
+                    close.onclick = function(){//关闭
+                        mask.style.display = 'none';
+                        fm.style.display = 'none';
+                    }
+
+                     // 登录
+                login.onclick=function(){
+                    if (!user.value || !pass.value) {
+                        alert('账号或密码不能为空');
+                        return false;
+                    }
+                    ajax({
+                        method: 'get',
+                        url: '../data/login.php',
+                        datas: 'act=login&user='+user.value+'&pass='+pass.value,
+                        succeed: function (str) {
+                            //console.log(str);
+                            var json = JSON.parse(str);//必须是严格的json格式{"name":"abc","age":"18"}
+                            if (json.err) {
+                                alert(json.msg);
+                                
+                            } else{
+                                alert(json.msg);
+                                window.location.href="";
+                            };
+                        },
+                        failed: function (code) {
+                            alert(code);
+                        }
+                    });
+                }
+    
+        
+                    // 更多
+                    more.onclick= function(){
+                        duo.style.display ='block';
+            
+                    }
+
+                }
+               
+        
+           
+                
+       
+    
+            </script>
+        </div>
     <!-- <script src="js/require.js" data-main="js/index"></script> -->
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/common.js"></script>
+    <script src="js/common/jquery-1.8.3.min.js"></script>
+    <script src="js/common/car.js"></script>
+    <script src="js/common/common.js"></script>
 </body>
 </html>

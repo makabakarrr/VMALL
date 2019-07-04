@@ -2,18 +2,18 @@ body,html{
     width:100%;
     height:100%;
 }
-.header{
+.ct-header{
     height:74px;
     background:#fff;    
 }
-.header-main{
+.ct-header-main{
     width:1200px;
     margin:0 auto;
     
     height:41px;
     position: relative;
 }
-.header-main img{
+.ct-header-main img{
     margin-top:18px;
     display:block;
     height:41px;
@@ -21,16 +21,16 @@ body,html{
     float: left;
     width:205px;
 }
-.header-main ul{
+.ct-header-main ul{
     float:left;
 }
-.header-main ul li{
+.ct-header-main ul li{
 padding:18px 24px 15px 0;
 float:left;
 line-height:41px;
 }
 
-.header-main form{
+.ct-header-main form{
 margin:23px 0 15px 0;
 float: right;
 height:36px;
@@ -47,6 +47,7 @@ position: relative;
 }
 .text{
     width:285px;
+    outline: medium;
     padding-left:15px;
     border-radius:14px 0 0 14px;
 }
@@ -54,16 +55,16 @@ position: relative;
     box-sizing: content-box;
     width:35px;
     border-radius: 0 14px 14px 0;
-   background:#e8e8e7 url(../images/img/search.png) no-repeat left 3px;
+   background:#e8e8e7 url(../img/details/search.png) no-repeat left 3px;
    background-size: 70% 70%;
 }
-.header-main form div{
+.ct-header-main form div{
     position: absolute;
     right:35px;
     top:0px;
     z-index: 300;
 }
-.header-main form span{
+.ct-header-main form span{
     color:#CF0A2C;
     font-size:12px;
     line-height:1.5em;

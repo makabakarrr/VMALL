@@ -17,7 +17,7 @@
   .ct-tobig .ct-big {
     height: 450px;
     width: 450px;
-    cursor: crosshair;
+    cursor: move;
     position: relative; }
     .ct-tobig .ct-big .ct-mask {
       height: 225px;
@@ -40,7 +40,8 @@
       left: 460px;
       top: 0px;
       border: 1px solid #ccc;
-      overflow: hidden; }
+      overflow: hidden;
+      background: #fffefe; }
       .ct-tobig .ct-big .ct-Big img {
         left: 460px;
         top: 0px;

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/logincss/iconfont.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
     <style>
         *{
             margin: 0;
@@ -265,13 +265,13 @@
                         </div>
                         <div class="input-year"  id="date">
                             <select id="year" name="year">
-                                <option value="">选择年份</option>
+                                <option value="">年</option>
                             </select>
                             <select id="month" name="month">
-                                <option value="">选择月份</option>
+                                <option value="">月</option>
                             </select>
                             <select id="days" name="day class='day'">
-                                <option value="">选择日份</option>
+                                <option value="">日</option>
                             </select>
                         </div>
                     </div>
@@ -286,7 +286,7 @@
                                 </div>
                                 <div class="input-center">
                                     <span>中国</span>
-                                    <img src="../img/jt.jpg" alt="">
+                                    <img src="../img/login/jt.jpg" alt="">
                                 </div>
                         </div>
                         <div class="ys">
@@ -299,7 +299,7 @@
                         </div>
                         <br>
                         <div class="ys">   
-                                <img src="../img/yz_03.png" class="yz">
+                                <img src="../img/login/yz_03.png" class="yz">
                                 <a href="#" class="ss " >点击按钮进行验证 </a> 
                         </div>
                         <div class="ys">
@@ -331,22 +331,22 @@
                         </div>
                         <br>
                         <div class="ys">
-                            <div class="input-left">
-                                  出生日期
-                            </div>
-                            <div class="input-year">
-                                <select id="year" name="year">
-                                    <option value="0">年</option>
-                                </select>
-                                <select id="month" name="month">
-                                    <option value="0">月</option>
-                                </select>
-                                <select id="day" name="day">
-                                    <option value="0">日</option>
-                                </select>
+                                <div class="input-left">
+                                      出生日期
+                                </div>
+                                <div class="input-year"  id="date">
+                                    <select id="year" name="year">
+                                        <option value="">年</option>
+                                    </select>
+                                    <select id="month" name="month">
+                                        <option value="">月</option>
+                                    </select>
+                                    <select id="days" name="day" class='day'>
+                                        <option value="">日</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     <div class="submit">注册</div>
             </form>
         </div>
@@ -435,7 +435,7 @@
             var pass = $('.pass').val();
             $.ajax({
                 type: 'get',
-                url: '../date/login.php', 
+                url: '../data/login.php', 
                 // data: 'act=add&user='+user+'&pass'+pass,
                 data:{user:user,pass:pass,act:'add'},
                dataType:'json',

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/logincss/log.css">
-    <link rel="stylesheet" type="text/css" href="../css/logincss/iconfont.css">
+    <link rel="stylesheet" href="../css/log.css">
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css">
 </head>
 <body>
     
@@ -146,7 +146,7 @@
 		}
 		ajax({
 			method: 'get',
-			url: '../date/login.php',
+			url: '../data/login.php',
 			datas: 'act=login&user='+user.value+'&pass='+pass.value,
 			succeed: function (str) {
 				//console.log(str);

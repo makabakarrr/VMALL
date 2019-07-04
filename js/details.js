@@ -107,78 +107,67 @@ $(document).ready(function (){
     var ctnumber = $('.ct-number').text();//存放数量
     $('.ct-first').css('border','1px solid red');//放大镜旁边的选项框默认选中第一个
     $('.ct-color li').each(function(index,target){//点击切换颜色
-    $(target).click(function(){
-        $('.ct-color li').css('border-color','#ccc')
-        $('.ct-color li').eq(index).css('border-color','#ca151d')
-        $('.ct-lunbo ul li').css('border','none')
-        $('.ct-lunbofirst').css('border-color','#ca151d')//切换了颜色后默认第一个小图标红
-        $('.ct-extend-1 img').attr('src',$('.ct-color li :nth-child('+index+1+') img').eq(index).attr('src'))
-        ctcolor =  $('.ct-color li').eq(index).text();//重新获取颜色
-        ctdata();
-        $.ajax({
-            type:'get',
-            url:'../data/tobig.json',
-            dataType:'json',
-            cache:false,
-            success:function(json){ 
-                console.log(json)
-                $('.ct-big img').attr('src',json[index][0]);
-                for(var i = 0;i < 7;i ++){
-                $('.ct-lunbo ul li img').eq(i).attr('src',json[index][i])
+        $(target).click(function(){
+            $('.ct-color li').css('border-color','#ccc')
+            $('.ct-color li').eq(index).css('border-color','#ca151d')
+            $('.ct-lunbo ul li').css('border','none')
+            $('.ct-lunbofirst').css('border-color','#ca151d')//切换了颜色后默认第一个小图标红
+            ctcolor =  $('.ct-color li').eq(index).text();//重新获取颜色
+            ctdata();
+            $.ajax({
+                type:'get',
+                url:'../data/tobig.json',
+                dataType:'json',
+                cache:false,
+                success:function(json){ 
+                    console.log(json)
+                    $('.ct-big img').attr('src',json[index][0]);
+                    for(var i = 0;i < 7;i ++){
+                    $('.ct-lunbo ul li img').eq(i).attr('src',json[index][i])
+                    }
                 }
-            }
+            })
         })
     })
-    })
 
 
-
-
-
-
-    $('.ct-version1 li').each(function(index,target){
+    $('.ct-version1 li').each(function(index,target){//点击了型号切换后获取手机型号
         $(target).click(function(){
             $('.ct-version1 li').css('border-color','#ccc');
             $('.ct-version1 li').eq(index).css('border-color','#ca151d');
             ctversion= $('.ct-version1 li').eq(index).text();
             ctdata();
         })
-        })
+    })
 
-$('.ct-count .jia').click(function(){
-    ctnumber++;
-    console.log(ctnumber);
-    $('.ct-number').text(ctnumber);
-})
-$('.ct-count .jian').click(function(){
-    if(ctnumber > 1){
-        ctnumber--;
+    $('.ct-count .jia').click(function(){
+        ctnumber++;
         console.log(ctnumber);
         $('.ct-number').text(ctnumber);
-    }
-})
+    })
+    $('.ct-count .jian').click(function(){
+        if(ctnumber > 1){
+            ctnumber--;
+            console.log(ctnumber);
+            $('.ct-number').text(ctnumber);
+        }
+    })
 
+    $('.ct-version2 li').each(function(index,target){
+        $(target).click(function(){
+            $('.ct-version2 li').css('border-color','#ccc');
+            $('.ct-version2 li').eq(index).css('border-color','#ca151d');
+            ctmatch = $('.ct-version2 li').eq(index).text();
+            ctdata();
+        })
+    })
 
-
-
-
-
-
-        $('.ct-version2 li').each(function(index,target){
-            $(target).click(function(){
-                $('.ct-version2 li').css('border-color','#ccc');
-                $('.ct-version2 li').eq(index).css('border-color','#ca151d');
-                ctmatch = $('.ct-version2 li').eq(index).text();
-                ctdata();
-            })
-            })
-
-            $('.ct-version3 li').each(function(index,target){
-                $(target).click(function(){
-                    $('.ct-version3 li').css('border-color','#ccc')
-                    $('.ct-version3 li').eq(index).css('border-color','#ca151d')
-                })
-                })
+    $('.ct-version3 li').each(function(index,target){
+        $(target).click(function(){
+            $('.ct-version3 li').css('border-color','#ccc')
+            $('.ct-version3 li').eq(index).css('border-color','#ca151d')
+        })
+    })
 
 
 
@@ -196,21 +185,45 @@ $('.ct-count .jian').click(function(){
     }
 
 
-
-
-
     //中间导航，需要固定在头部
     $(window).scroll(function(){
         if($(document).scrollTop() > 1100){//滑动到1000px时导航栏固定在头部
         　　$(".ct-miaodian").addClass('ct-miaodian1')
         　　$('.ct-miaodian-main').css({'padding':'12px 0 11px'});
-            $('.ct-addtocar2').css('display','block')}
-        else{
+            $('.ct-addtocar2').css('display','block')
+        }else{
         　　$(".ct-miaodian").removeClass('ct-miaodian1')
         　　$('.ct-miaodian-main').css({'padding':'35px 0 34px'});
             $('.ct-addtocar2').css('display','none')　　　
-        　　}
+        }
     });      
+
+
+     //搭配翻页
+    $('.ct-zuofan,.ct-youfan').hover(
+        function(){
+        $(this).css('background','#3a3a3a')
+        },
+        function(){
+        $(this).css('background','#ccc')
+        }
+    )
+
+    $('.ct-zuofan').click(
+        function(){ 
+        var fanyeleft=parseInt($('.ct-fanye-u ul').css('left'));
+        if(fanyeleft){
+            $('.ct-fanye-u ul').css('left','0')   
+        }
+    })
+  
+   $('.ct-youfan').click(
+       function(){ 
+          var fanyeleft=parseInt($('.ct-fanye-u ul').css('left'));
+          if(fanyeleft==0){
+              $('.ct-fanye-u ul').css('left','-754px')   
+          }
+    })   
 
     $.ajax({//规格参数，售后服务的数据获取
         type:'get',
@@ -236,12 +249,6 @@ $('.ct-count .jian').click(function(){
         }
         }
     });
-
-
-
-
-
-
 })
 
 
@@ -263,31 +270,7 @@ $('.ct-count .jian').click(function(){
 
 
 
- //搭配翻页
- $('.ct-zuofan,.ct-youfan').hover(
-     function(){
-        $(this).css('background','#3a3a3a')
-     },function(){
-        $(this).css('background','#ccc')
-     }
-    
- )
 
- $('.ct-zuofan').click(
-     function(){ 
-        var fanyeleft=parseInt($('.ct-fanye-u ul').css('left'));
-        if(fanyeleft){
-            $('.ct-fanye-u ul').css('left','0')   
-        }
-    })
-   
-    $('.ct-youfan').click(
-        function(){ 
-           var fanyeleft=parseInt($('.ct-fanye-u ul').css('left'));
-           if(fanyeleft==0){
-               $('.ct-fanye-u ul').css('left','-754px')   
-           }
-       })   
 
 
 
